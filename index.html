@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <button type="button" onclick="authenticate()">Login</button>
+    </form>
+
+    <p id="loginResult"></p>
+
+    <script>
+        function authenticate() {
+            const enteredUsername = document.getElementById('username').value;
+            const enteredPassword = document.getElementById('password').value;
+
+            // Replace with your desired username and password
+            const correctUsername = 'user123';
+            const correctPassword = 'pass123';
+
+            if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+                document.getElementById('loginResult').textContent = 'Login successful!';
+                // Redirect the user to another page
+                window.location.href = 'https://wjchuaz.github.io/hellohtml/'; // Replace with the desired URL
+            } else {
+                document.getElementById('loginResult').textContent = 'Login failed. Please try again.';
+            }
+        }
+    </script>
+</body>
+</html>
