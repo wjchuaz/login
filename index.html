@@ -18,15 +18,23 @@
     <p id="loginResult"></p>
 
     <script>
+        const validCredentials = [
+            { username: 'cwchua', password: 'cwchua' },
+            { username: 'chso', password: 'chso' },
+            { username: 'ylchaing', password: 'ylchaing' },
+            { username: 'skgoo', password: 'skgoo' }
+            // Add more username-password combinations as needed
+        ];
+
         function authenticate() {
             const enteredUsername = document.getElementById('username').value;
             const enteredPassword = document.getElementById('password').value;
 
-            // Replace with your desired username and password
-            const correctUsername = 'user123';
-            const correctPassword = 'user123';
+            const validPair = validCredentials.find(cred => {
+                return cred.username === enteredUsername && cred.password === enteredPassword;
+            });
 
-            if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+            if (validPair) {
                 document.getElementById('loginResult').textContent = 'Login successful!';
                 // Redirect the user to another page
                 window.location.href = 'https://wjchuaz.github.io/hellohtml/'; // Replace with the desired URL
